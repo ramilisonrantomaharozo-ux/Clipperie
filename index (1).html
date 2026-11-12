@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Clipperie : un live de deux heures devient trente clips verticaux</title>
+<meta name="description" content="Dépose ton live ou ton podcast. Clipperie repère les meilleurs moments et sort des clips verticaux sous-titrés, prêts à publier. 49 € par mois.">
+<meta property="og:title" content="Un live de deux heures devient trente clips verticaux">
+<meta property="og:description" content="60 clips verticaux sous-titrés par mois, prêts à publier sur TikTok, Reels et Shorts.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:url" content="https://clipperie-amber.vercel.app">
+<meta property="og:image" content="https://clipperie-amber.vercel.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Clipperie : un live de deux heures devient trente clips verticaux">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#F7F2E8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F7F2E8; --ink:#14213D; --acc:#E8472B; --acc-ink:#FFFFFF; --muted:#4A5470; --line:#14213D; --card:#FFFFFF;
+  --head:"Bricolage Grotesque",Georgia,"Times New Roman",serif;
+  --body:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#0D1528;--ink:#F7F2E8;--acc:#F0583C;--acc-ink:#0D1528;--muted:#B7BED1;--line:#F7F2E8;--card:#14213D;color-scheme:dark}
+}
+:root[data-theme="dark"]{--bg:#0D1528;--ink:#F7F2E8;--acc:#F0583C;--acc-ink:#0D1528;--muted:#B7BED1;--line:#F7F2E8;--card:#14213D;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.55 var(--body);padding-bottom:5.5rem}
+h1,h2,h3{font-family:var(--head);font-weight:800;line-height:1.05;margin:0;letter-spacing:-.02em}
+p{margin:0}
+.wrap{max-width:40rem;margin:0 auto;padding:0 1.25rem}
+section{padding:2.75rem 0}
+a{color:inherit}
+.btn{display:block;text-align:center;text-decoration:none;font:800 1.15rem/1 var(--head);background:var(--acc);color:var(--acc-ink);border:2px solid var(--line);border-radius:999px;padding:1.1rem 1.5rem;min-height:3.5rem;box-shadow:4px 4px 0 var(--line)}
+.btn:active{transform:translate(3px,3px);box-shadow:1px 1px 0 var(--line)}
+.btn:focus-visible,a:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
+.sub{font-size:.9rem;color:var(--muted);margin-top:.75rem;text-align:center}
+
+.hero{padding-top:1.75rem}
+.brand{font:800 1.25rem var(--head)}
+h1{font-size:clamp(2.4rem,11vw,4.25rem);margin:1.5rem 0 1rem}
+.lead{font-size:1.2rem;max-width:30rem;margin-bottom:1.5rem}
+
+.live{height:2.25rem;border:2px solid var(--line);border-radius:.5rem;background:var(--ink);color:var(--bg);font:700 .85rem/2rem var(--body);padding:0 .75rem;margin-top:2rem}
+.clips{display:flex;gap:.5rem;margin-top:.75rem}
+.clip{flex:1;aspect-ratio:9/16;border:2px solid var(--line);border-radius:.6rem;background:var(--card);display:flex;flex-direction:column;justify-content:flex-end;padding:.4rem;font:800 .62rem/1.15 var(--head);overflow:hidden;overflow-wrap:anywhere;hyphens:auto}
+.clip:nth-child(odd){background:var(--acc);color:var(--acc-ink)}
+.clip span{background:var(--bg);color:var(--ink);border-radius:.25rem;padding:.2rem .3rem;display:block}
+
+h2{font-size:clamp(1.8rem,8vw,2.6rem);margin-bottom:1.25rem}
+.pain{background:var(--ink);color:var(--bg)}
+.pain .big{font:800 clamp(2.6rem,13vw,4.5rem)/1 var(--head);margin-bottom:1.25rem}
+.pain p+p{margin-top:1rem}
+.benefits h3{font-size:1.5rem;margin-bottom:.4rem}
+.benefits article{border-top:2px solid var(--line);padding:1.25rem 0}
+.benefits article:last-child{border-bottom:2px solid var(--line)}
+.price{text-align:center}
+.price .amount{font:800 clamp(3.5rem,18vw,6rem)/1 var(--head)}
+.price ul{list-style:none;padding:0;margin:1.25rem 0 1.75rem}
+.price li{padding:.3rem 0}
+
+footer{padding:2rem 0 1rem;font-size:.9rem;color:var(--muted)}
+footer nav{display:flex;flex-wrap:wrap;gap:.5rem 1.25rem}
+footer a{padding:.4rem 0;min-height:2.75rem;display:inline-flex;align-items:center}
+
+.bar{position:fixed;left:0;right:0;bottom:0;background:var(--bg);border-top:2px solid var(--line);padding:.75rem 1.25rem calc(.75rem + env(safe-area-inset-bottom,0px));z-index:5}
+.bar .btn{max-width:40rem;margin:0 auto}
+
+.legal{display:none;padding:2rem 0 3rem}
+.legal:target{display:block}
+:root:has(.legal:target) main,:root:has(.legal:target) .bar{display:none}
+.legal h2{font-size:2rem}
+.legal h3{font-size:1.15rem;margin:1.5rem 0 .4rem}
+.legal p{margin-bottom:.75rem}
+.todo{background:#FFE8A3;color:#14213D;padding:0 .25rem;border-radius:.2rem}
+
+.err{display:none;padding:3rem 0}
+.err:target{display:block}
+:root:has(.err:target) main,:root:has(.err:target) .bar{display:none}
+@media (min-width:48rem){body{font-size:1.125rem}.btn{display:inline-block;padding-left:2.5rem;padding-right:2.5rem}.sub{text-align:left}.price .btn{display:inline-block}.price .sub{text-align:center}}
+@media (prefers-reduced-motion:no-preference){.btn{transition:transform .1s,box-shadow .1s}}
+</style>
+</head>
+<body>
+<main>
+<section class="hero"><div class="wrap">
+  <div class="brand">Clipperie</div>
+  <h1>Un live de deux heures devient trente clips verticaux.</h1>
+  <p class="lead">Dépose ton live, ton podcast ou ta formation. On repère les meilleurs moments et on te rend des clips sous-titrés, prêts à publier.</p>
+  <a class="btn" href="https://buy.polar.sh/polar_cl_Ao6qlZ3GSQXrSxo52zwIBZ1WfUN2iRWALZD1J46uJqb" target="_blank" rel="noopener">Je veux mes clips, 49 € par mois</a>
+  <p class="sub">Résiliable à tout moment. Paiement sécurisé par Polar.</p>
+  <div class="live" aria-hidden="true">Ton live de 2 h</div>
+  <div class="clips" aria-hidden="true">
+    <div class="clip"><span>Le moment où tout bascule</span></div>
+    <div class="clip"><span>L’erreur que je ne referai plus</span></div>
+    <div class="clip"><span>Ma réponse la plus partagée</span></div>
+    <div class="clip"><span>Le conseil à retenir</span></div>
+    <div class="clip"><span>Ce que personne ne dit</span></div>
+  </div>
+</div></section>
+
+<section class="pain"><div class="wrap">
+  <div class="big">Une journée entière</div>
+  <p>C’est le temps qu’il faut pour découper une seule vidéo longue à la main.</p>
+  <p>Alors tu ne le fais pas. Tes heures de contenu dorment, et personne ne te découvre, alors que ce sont les vidéos courtes qui amènent de nouvelles audiences.</p>
+</div></section>
+
+<section class="benefits"><div class="wrap">
+  <h2>Ce que tu reçois</h2>
+  <article><h3>Les bons moments, trouvés pour toi</h3><p>Clipperie transcrit ta vidéo, repère les passages forts et les découpe en verticales de 30 à 60 secondes.</p></article>
+  <article><h3>Sous-titres et titre déjà là</h3><p>Chaque clip arrive avec ses sous-titres incrustés et un titre proposé. Tu relis, tu ajustes, c’est tout.</p></article>
+  <article><h3>Tout d’un coup, prêt à publier</h3><p>Tu télécharges le lot complet et tu publies sur TikTok, Reels et Shorts.</p></article>
+</div></section>
+
+<section class="price"><div class="wrap">
+  <h2>Un seul abonnement</h2>
+  <div class="amount">49 €</div>
+  <p>par mois, TTC</p>
+  <ul>
+    <li>60 clips verticaux par mois</li>
+    <li>Sous-titres incrustés et titres inclus</li>
+    <li>Résiliable à tout moment</li>
+  </ul>
+  <a class="btn" href="https://buy.polar.sh/polar_cl_Ao6qlZ3GSQXrSxo52zwIBZ1WfUN2iRWALZD1J46uJqb" target="_blank" rel="noopener">Je veux mes clips</a>
+  <p class="sub">Après le paiement, tu reçois un email pour envoyer ta première vidéo.</p>
+</div></section>
+
+<footer><div class="wrap">
+  <nav aria-label="Informations légales">
+    <a href="#mentions-legales">Mentions légales</a>
+    <a href="#cgv">Conditions générales de vente</a>
+    <a href="#confidentialite">Politique de confidentialité</a>
+  </nav>
+</div></footer>
+</main>
+
+<div class="bar"><a class="btn" href="https://buy.polar.sh/polar_cl_Ao6qlZ3GSQXrSxo52zwIBZ1WfUN2iRWALZD1J46uJqb" target="_blank" rel="noopener">Je veux mes clips, 49 € par mois</a></div>
+
+<section class="legal" id="mentions-legales"><div class="wrap">
+  <p><a href="#">Retour à l’accueil</a></p>
+  <h2>Mentions légales</h2>
+  <h3>Éditeur du site</h3>
+  <p><span class="todo">[RAISON SOCIALE ou NOM PRÉNOM]</span>, <span class="todo">[forme juridique, ex. micro-entrepreneur]</span>, SIRET <span class="todo">[SIRET]</span>, <span class="todo">[ADRESSE COMPLÈTE]</span>.</p>
+  <p>Contact : <span class="todo">[EMAIL]</span>. Directeur de la publication : <span class="todo">[NOM PRÉNOM]</span>.</p>
+  <h3>Hébergement</h3>
+  <p>Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, États-Unis.</p>
+  <h3>Paiement</h3>
+  <p>Les paiements sont traités par Polar, qui agit comme revendeur officiel (« merchant of record »). Nous ne conservons aucun numéro de carte bancaire.</p>
+</div></section>
+
+<section class="legal" id="cgv"><div class="wrap">
+  <p><a href="#">Retour à l’accueil</a></p>
+  <h2>Conditions générales de vente</h2>
+  <h3>Service</h3>
+  <p>Clipperie transforme une vidéo longue en clips verticaux sous-titrés. L’abonnement comprend 60 clips par mois.</p>
+  <h3>Prix et paiement</h3>
+  <p>L’abonnement coûte 49 € TTC par mois, payable à l’avance par carte via Polar et renouvelé chaque mois.</p>
+  <h3>Résiliation</h3>
+  <p>Tu peux résilier à tout moment depuis le lien fourni dans l’email de confirmation ou en écrivant à <span class="todo">[EMAIL]</span>. La résiliation prend effet à la fin de la période déjà payée.</p>
+  <h3>Droit de rétractation</h3>
+  <p>Si tu es consommateur, tu disposes de 14 jours pour te rétracter. Si tu demandes l’exécution immédiate du service, tu reconnais perdre ce droit une fois le service pleinement exécuté. <span class="todo">[À faire valider par un professionnel du droit]</span></p>
+  <h3>Responsabilité</h3>
+  <p>Tu restes responsable des contenus que tu déposes et tu garantis détenir les droits nécessaires pour les traiter.</p>
+  <h3>Droit applicable</h3>
+  <p>Les présentes conditions sont soumises au droit français. <span class="todo">[Mentions du médiateur de la consommation à compléter]</span></p>
+</div></section>
+
+<section class="legal" id="confidentialite"><div class="wrap">
+  <p><a href="#">Retour à l’accueil</a></p>
+  <h2>Politique de confidentialité</h2>
+  <h3>Données collectées</h3>
+  <p>Ton adresse email et les informations de paiement (traitées par Polar), ainsi que les vidéos que tu déposes pour le service.</p>
+  <h3>Pourquoi</h3>
+  <p>Pour te fournir le service, gérer ton abonnement et te contacter à ce sujet.</p>
+  <h3>Durée de conservation</h3>
+  <p>Tes données sont conservées pendant la durée de l’abonnement, puis supprimées dans un délai de <span class="todo">[durée à fixer]</span>, sauf obligation légale de conservation.</p>
+  <h3>Tes droits</h3>
+  <p>Tu peux accéder à tes données, les corriger, les supprimer ou t’opposer à leur traitement en écrivant à <span class="todo">[EMAIL]</span>. Tu peux aussi saisir la CNIL.</p>
+  <h3>Sous-traitants</h3>
+  <p>Polar (paiement), Vercel (hébergement).</p>
+</div></section>
+</body>
+</html>
